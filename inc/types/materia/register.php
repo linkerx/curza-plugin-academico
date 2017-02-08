@@ -5,10 +5,10 @@ add_action('init', 'curza_plugin_academico_register_cpt_materia');
 function curza_plugin_academico_register_cpt_materia(){
     
     $labels = array(
-        'name' => __('Departamentos','materia_name'),
-        'singular_name' => __('Departamento','materia_singular_name'),
-        'menu_name' => __('Departamentos','materia_menu_name'),
-        'all_items' => __('Lista de Departamentos','materia_all_items'),
+        'name' => __('Materias','materia_name'),
+        'singular_name' => __('Materia','materia_singular_name'),
+        'menu_name' => __('Materias','materia_menu_name'),
+        'all_items' => __('Lista de Materias','materia_all_items'),
     );
     
     $args = array(
@@ -24,7 +24,7 @@ function curza_plugin_academico_register_cpt_materia(){
         'hierarchical' => false,
         'menu_position' => null,
         'support' => array('title','editor','thumbnail','revisions'),
-        "capability_type" => 'academico',
+        "capability_type" => 'materia',
         "map_meta_cap" => true        
     );
     

@@ -5,10 +5,10 @@ add_action('init', 'curza_plugin_academico_register_cpt_plan');
 function curza_plugin_academico_register_cpt_plan(){
     
     $labels = array(
-        'name' => __('Departamentos','plan_name'),
-        'singular_name' => __('Departamento','plan_singular_name'),
-        'menu_name' => __('Departamentos','plan_menu_name'),
-        'all_items' => __('Lista de Departamentos','plan_all_items'),
+        'name' => __('Planes','plan_name'),
+        'singular_name' => __('Plan','plan_singular_name'),
+        'menu_name' => __('Planes','plan_menu_name'),
+        'all_items' => __('Lista de Planes','plan_all_items'),
     );
     
     $args = array(
@@ -24,7 +24,7 @@ function curza_plugin_academico_register_cpt_plan(){
         'hierarchical' => false,
         'menu_position' => null,
         'support' => array('title','editor','thumbnail','revisions'),
-        "capability_type" => 'academico',
+        "capability_type" => 'plan',
         "map_meta_cap" => true        
     );
     

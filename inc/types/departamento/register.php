@@ -24,7 +24,7 @@ function curza_plugin_academico_register_cpt_departamento(){
         'hierarchical' => false,
         'menu_position' => null,
         'support' => array('title','editor','thumbnail','revisions'),
-        "capability_type" => 'academico',
+        "capability_type" => 'departamento',
         "map_meta_cap" => true        
     );
     

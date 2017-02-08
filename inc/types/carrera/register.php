@@ -5,10 +5,10 @@ add_action('init', 'curza_plugin_academico_register_cpt_carrera');
 function curza_plugin_academico_register_cpt_carrera(){
     
     $labels = array(
-        'name' => __('Departamentos','carrera_name'),
-        'singular_name' => __('Departamento','carrera_singular_name'),
-        'menu_name' => __('Departamentos','carrera_menu_name'),
-        'all_items' => __('Lista de Departamentos','carrera_all_items'),
+        'name' => __('Carreras','carrera_name'),
+        'singular_name' => __('Carrera','carrera_singular_name'),
+        'menu_name' => __('Carreras','carrera_menu_name'),
+        'all_items' => __('Lista de Carreras','carrera_all_items'),
     );
     
     $args = array(
@@ -24,7 +24,7 @@ function curza_plugin_academico_register_cpt_carrera(){
         'hierarchical' => false,
         'menu_position' => null,
         'support' => array('title','editor','thumbnail','revisions'),
-        "capability_type" => 'academico',
+        "capability_type" => 'carrera',
         "map_meta_cap" => true        
     );
     

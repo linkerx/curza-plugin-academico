@@ -20,10 +20,6 @@ include_once 'inc/register.php';
  */
 include_once 'inc/menu.php';
 
-/**
- * Configure Types Columns
- */
-include_once 'inc/configure-columns.php';
 
 
 
