@@ -24,9 +24,11 @@ function curza_plugin_academico_register_cpt_departamento(){
         'hierarchical' => false,
         'menu_position' => null,
         'support' => array('title','editor','thumbnail','revisions'),
+        'taxonomies' => array('category'),
         "capability_type" => 'departamento',
         "map_meta_cap" => true        
     );
     
     register_post_type('departamento',$args);
+    add_post_type_support('agencia', array('thumbnail'));
 }

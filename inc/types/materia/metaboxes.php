@@ -1,6 +1,7 @@
 <?php
 
 add_action ('add_meta_boxes','curza_plugin_academico_materia_metaboxes');
+add_action('post_edit_form_tag', 'curza_plugin_academico_materia_form_tag');
 
 function curza_plugin_academico_materia_metaboxes() {
     global $post;
@@ -18,4 +19,11 @@ function curza_plugin_academico_materia_equipo_meta_box(){
     wp_editor($equipo, "curza_plugin_academico_materia_equipo_editor");
     print "</div>";
     print "<div style='clear:both;'></div>";
+}
+
+function curza_plugin_academico_materia_form_tag() {
+    global $post;
+    if($post->post_type == 'plan'){
+        echo ' enctype="multipart/form-data"';
+    }
 }
