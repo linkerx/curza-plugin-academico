@@ -1,5 +1,7 @@
 <?php
 
+/* Menu */
+
 function curza_plugin_academico_menu(){
     add_menu_page('Configuración', 'Academico', 'manage_academico',basename(__FILE__), 'curza_plugin_academico_setting_page', null, 20 );
     add_submenu_page(basename(__FILE__), 'Departamentos', 'Departamentos', 'manage_academico', 'edit.php?post_type=departamento', NULL);
