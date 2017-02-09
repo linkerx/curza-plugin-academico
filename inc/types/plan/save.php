@@ -10,10 +10,12 @@ function curza_plugin_academico_plan_save($id) {
         if (defined('DOING_AJAX') && DOING_AJAX)
                 return $id;
 
-        update_post_meta($id,'curza_plugin_academico_plan_titulo',$_POST['curza_plugin_academico_plan_titulo_editor']);
-        update_post_meta($id,'curza_plugin_academico_plan_duracion',$_POST['curza_plugin_academico_plan_duracion_editor']);
-        update_post_meta($id,'curza_plugin_academico_plan_carga',$_POST['curza_plugin_academico_plan_carga_editor']);
-        update_post_meta($id,'curza_plugin_academico_plan_modalidad',$_POST['curza_plugin_academico_plan_modalidad_editor']);
+        update_post_meta($id,'curza_plugin_academico_plan_titulo',$_POST['curza_plugin_academico_plan_titulo_input']);
+        update_post_meta($id,'curza_plugin_academico_plan_duracion',$_POST['curza_plugin_academico_plan_duracion_input']);
+        update_post_meta($id,'curza_plugin_academico_plan_carga_total',$_POST['curza_plugin_academico_plan_carga_total_input']);
+        update_post_meta($id,'curza_plugin_academico_plan_carga_semanal',$_POST['curza_plugin_academico_plan_carga_semanal_input']);
+        update_post_meta($id,'curza_plugin_academico_plan_modalidad',$_POST['curza_plugin_academico_plan_modalidad_input']);
+        
         
         if(!empty($_FILES['curza_plugin_academico_plan_pdf']['name'])) {
             $supported_types = array('application/pdf');

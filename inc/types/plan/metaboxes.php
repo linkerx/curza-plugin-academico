@@ -8,7 +8,8 @@ function curza_plugin_academico_plan_metaboxes() {
     if($post->post_type == 'plan'){
         add_meta_box('curza_plugin_academico_plan_titulo',"Título", 'curza_plugin_academico_plan_titulo_meta_box', null, 'normal','core');
         add_meta_box('curza_plugin_academico_plan_duracion',"Duracion", 'curza_plugin_academico_plan_duracion_meta_box', null, 'normal','core');
-        add_meta_box('curza_plugin_academico_plan_carga',"Carga", 'curza_plugin_academico_plan_carga_meta_box', null, 'normal','core');
+        add_meta_box('curza_plugin_academico_plan_carga_total',"Carga Horaria Total", 'curza_plugin_academico_plan_carga_total_meta_box', null, 'normal','core');
+        add_meta_box('curza_plugin_academico_plan_carga_semanal',"Carga Horaria Semanal", 'curza_plugin_academico_plan_carga_semanal_meta_box', null, 'normal','core');
         add_meta_box('curza_plugin_academico_plan_modalidad',"Modalidad", 'curza_plugin_academico_plan_modalidad_meta_box', null, 'normal','core');
         add_meta_box('curza_plugin_academico_plan_pdf',"PDF Ordenanza", 'curza_plugin_academico_plan_pdf_meta_box', null, 'normal','core');
     }
@@ -19,27 +20,47 @@ function curza_plugin_academico_plan_titulo_meta_box(){
     $id = $post->ID;
     $titulo = get_post_meta($id,'curza_plugin_academico_plan_titulo',true);
     print "<div id='curza_plugin_academico_plan_titulo_container'>";
-    print "<input type='text' name='curza_plugin_academico_plan_titulo_input' value='".$director."'></div>";
+    print "<input type='text' name='curza_plugin_academico_plan_titulo_input' style='width:100%;' value='".$titulo."'></div>";
     print "<div style='clear:both;'></div>";
 }
+
 
 function curza_plugin_academico_plan_duracion_meta_box(){
     global $post;
     $id = $post->ID;
     $duracion = get_post_meta($id,'curza_plugin_academico_plan_duracion',true);
     print "<div id='curza_plugin_academico_plan_duracion_container'>";
-    print "<input type='text' name='curza_plugin_academico_plan_duracion_input' value='".$director."'></div>";
+    print "<input type='text' name='curza_plugin_academico_plan_duracion_input' value='".$duracion."'></div>";
+    print "<div style='clear:both;'></div>";
+}
+
+function curza_plugin_academico_plan_carga_total_meta_box(){
+    global $post;
+    $id = $post->ID;
+    $carga_total = get_post_meta($id,'curza_plugin_academico_plan_carga_total',true);
+    print "<div id='curza_plugin_academico_plan_carga_total_container'>";
+    print "<input type='text' name='curza_plugin_academico_plan_carga_total_input' value='".$carga_total."'></div>";
+    print "<div style='clear:both;'></div>";
+}
+
+function curza_plugin_academico_plan_carga_semanal_meta_box(){
+    global $post;
+    $id = $post->ID;
+    $carga_semanal = get_post_meta($id,'curza_plugin_academico_plan_carga_semanal',true);
+    print "<div id='curza_plugin_academico_plan_carga_semanal_container'>";
+    print "<input type='text' name='curza_plugin_academico_plan_carga_semanal_input' value='".$carga_semanal."'></div>";
     print "<div style='clear:both;'></div>";
 }
 
 function curza_plugin_academico_plan_modalidad_meta_box(){
     global $post;
-    $id = $post->ID;
+    $id = $post->ID;    
     $modalidad = get_post_meta($id,'curza_plugin_academico_plan_modalidad',true);
     print "<div id='curza_plugin_academico_plan_modalidad_container'>";
-    print "<input type='text' name='curza_plugin_academico_plan_modalidad_input' value='".$director."'></div>";
+    print "<input type='text' name='curza_plugin_academico_plan_modalidad_input' value='".$modalidad."'></div>";
     print "<div style='clear:both;'></div>";
 }
+
 
 function curza_plugin_academico_plan_pdf_meta_box() {  
     global $post;
@@ -60,5 +81,4 @@ function curza_plugin_academico_plan_form_tag() {
         echo ' enctype="multipart/form-data"';
     }
 }
-
 

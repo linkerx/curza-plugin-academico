@@ -23,10 +23,11 @@ function curza_plugin_academico_register_cpt_carrera(){
         'has_archive' => true,
         'hierarchical' => false,
         'menu_position' => null,
-        'support' => array('title','editor','thumbnail','revisions'),
+        'support' => array('title','thumbnail','revisions'),
         "capability_type" => 'carrera',
         "map_meta_cap" => true        
     );
     
     register_post_type('carrera',$args);
+    add_post_type_support('carrera', array('thumbnail','excerpt'));
 }

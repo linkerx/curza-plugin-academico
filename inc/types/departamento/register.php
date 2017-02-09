@@ -30,5 +30,5 @@ function curza_plugin_academico_register_cpt_departamento(){
     );
     
     register_post_type('departamento',$args);
-    add_post_type_support('agencia', array('thumbnail'));
+    add_post_type_support('departamento', array('thumbnail'));
 }
