@@ -15,6 +15,7 @@ function curza_plugin_academico_materia_save($id) {
         update_post_meta($id,'curza_plugin_academico_materia_carga_total',$_POST['curza_plugin_academico_materia_carga_total_input']);
         update_post_meta($id,'curza_plugin_academico_materia_carga_semanal',$_POST['curza_plugin_academico_materia_carga_semanal_input']);
         update_post_meta($id,'curza_plugin_academico_materia_dedicacion',$_POST['curza_plugin_academico_materia_dedicacion_select']);
+        update_post_meta($id,'curza_plugin_academico_materia_programa_ano',$_POST['curza_plugin_academico_materia_programa_ano_input']);
         
         if(!empty($_FILES['curza_plugin_academico_materia_pdf']['name'])) {
             $supported_types = array('application/pdf');

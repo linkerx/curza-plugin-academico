@@ -11,7 +11,7 @@ function curza_plugin_academico_departamento_save($id) {
                 return $id;
 
         update_post_meta($id,'curza_plugin_academico_departamento_equipo',$_POST['curza_plugin_academico_departamento_equipo_editor']);
-        update_post_meta($id,'curza_plugin_academico_departamento_director',$_POST['curza_plugin_academico_departamento_director_editor']);
+        update_post_meta($id,'curza_plugin_academico_departamento_director',$_POST['curza_plugin_academico_departamento_director_input']);
         update_post_meta($id,'curza_plugin_academico_departamento_contacto',$_POST['curza_plugin_academico_departamento_contacto_editor']);
     }
 }

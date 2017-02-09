@@ -6,13 +6,13 @@ add_action('post_edit_form_tag', 'curza_plugin_academico_materia_form_tag');
 function curza_plugin_academico_materia_metaboxes() {
     global $post;
     if($post->post_type == 'materia'){
-        add_meta_box('curza_plugin_academico_materia_orden',"Orden", 'curza_plugin_academico_materia_orden_meta_box', null, 'normal','core');
+        add_meta_box('curza_plugin_academico_materia_orden',"Orden", 'curza_plugin_academico_materia_orden_meta_box', null, 'side','core');
         add_meta_box('curza_plugin_academico_materia_equipo',"Equipo", 'curza_plugin_academico_materia_equipo_meta_box', null, 'normal','core');
-        add_meta_box('curza_plugin_academico_materia_carga_total',"Carga Total", 'curza_plugin_academico_materia_carga_total_meta_box', null, 'normal','core');
-        add_meta_box('curza_plugin_academico_materia_carga_semanal ',"Carga Semanal", 'curza_plugin_academico_materia_carga_semanal_meta_box', null, 'normal','core');
-        add_meta_box('curza_plugin_academico_materia_dedicacion',"Dedicacion", 'curza_plugin_academico_materia_dedicacion_meta_box', null, 'normal','core');
+        add_meta_box('curza_plugin_academico_materia_carga_total',"Carga Total", 'curza_plugin_academico_materia_carga_total_meta_box', null, 'side','core');
+        add_meta_box('curza_plugin_academico_materia_carga_semanal ',"Carga Semanal", 'curza_plugin_academico_materia_carga_semanal_meta_box', null, 'side','core');
+        add_meta_box('curza_plugin_academico_materia_dedicacion',"Dedicacion", 'curza_plugin_academico_materia_dedicacion_meta_box', null, 'side','core');
         add_meta_box('curza_plugin_academico_materia_programa',"Programa", 'curza_plugin_academico_materia_programa_meta_box', null, 'normal','core');
-        add_meta_box('curza_plugin_academico_materia_programa_ano',"Año del Programa", 'curza_plugin_academico_materia_programa_ano_meta_box', null, 'normal','core');
+        add_meta_box('curza_plugin_academico_materia_programa_ano',"Año del Programa", 'curza_plugin_academico_materia_programa_ano_meta_box', null, 'side','core');
     }
 }
 
