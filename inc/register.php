@@ -35,3 +35,30 @@ include_once 'types/materia/columns.php';
 include_once 'types/materia/metaboxes.php';
 include_once 'types/materia/assets.php';
 include_once 'types/materia/save.php';
+
+/**
+ * Custom Type Programa
+ */
+include_once 'types/programa/register.php';
+include_once 'types/programa/columns.php';
+include_once 'types/programa/metaboxes.php';
+include_once 'types/programa/assets.php';
+include_once 'types/programa/save.php';
+
+/**
+ * Custom Type Aula
+ */
+include_once 'types/aula/register.php';
+include_once 'types/aula/columns.php';
+include_once 'types/aula/metaboxes.php';
+include_once 'types/aula/assets.php';
+include_once 'types/aula/save.php';
+
+/**
+ * Custom Type Clase
+ */
+include_once 'types/clase/register.php';
+include_once 'types/clase/columns.php';
+include_once 'types/clase/metaboxes.php';
+include_once 'types/clase/assets.php';
+include_once 'types/clase/save.php';

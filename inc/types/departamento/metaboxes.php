@@ -35,7 +35,7 @@ function curza_plugin_academico_departamento_contacto_meta_box(){
     $id = $post->ID;
     $contacto = get_post_meta($id,'curza_plugin_academico_departamento_contacto',true);
     print "<div id='curza_plugin_academico_departamento_contacto_container'>";
-    wp_editor($equipo, "curza_plugin_academico_departamento_contacto_editor");
+    wp_editor($contacto, "curza_plugin_academico_departamento_contacto_editor");
     print "</div>";
     print "<div style='clear:both;'></div>";
 }
