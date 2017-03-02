@@ -14,7 +14,18 @@ function curza_plugin_academico_plan_save($id) {
         update_post_meta($id,'curza_plugin_academico_plan_duracion',$_POST['curza_plugin_academico_plan_duracion_input']);
         update_post_meta($id,'curza_plugin_academico_plan_carga_total',$_POST['curza_plugin_academico_plan_carga_total_input']);
         update_post_meta($id,'curza_plugin_academico_plan_carga_semanal',$_POST['curza_plugin_academico_plan_carga_semanal_input']);
-        update_post_meta($id,'curza_plugin_academico_plan_modalidad',$_POST['curza_plugin_academico_plan_modalidad_input']);
+        
+        $modalidades = get_option('curza_plugin_academico_modalidades');
+        $mods_array = json_decode($modalidades);
+        
+        $resp_mod = array();
+        foreach($mods_array as $mod){
+            if(isset($_POST['modalidad'][$mod]))
+                $resp_mod[$mod] = 1;
+        }
+        
+       
+        update_post_meta($id,'curza_plugin_academico_plan_modalidad',json_encode($resp_mod));
         
         
         if(!empty($_FILES['curza_plugin_academico_plan_pdf']['name'])) {

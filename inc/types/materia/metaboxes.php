@@ -68,7 +68,7 @@ function curza_plugin_academico_materia_ano_meta_box(){
     print "<select name='curza_plugin_academico_materia_ano_select'>";
     foreach ($anos as $key=> $value){
         print "<option value='".$key."' "; 
-        if($anos == $key)
+        if($ano == $key)
             print "selected";
         print " >".$value."° Año</option>";
     }

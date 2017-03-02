@@ -54,10 +54,26 @@ function curza_plugin_academico_plan_carga_semanal_meta_box(){
 
 function curza_plugin_academico_plan_modalidad_meta_box(){
     global $post;
-    $id = $post->ID;    
-    $modalidad = get_post_meta($id,'curza_plugin_academico_plan_modalidad',true);
+    $id = $post->ID;
+    $modalidades = get_option('curza_plugin_academico_modalidades');
+    
+    if(!$modalidades){
+        $modalidades = json_encode(array('presencial','semipresencial','virtual'));
+        update_option('curza_plugin_academico_modalidades',$modalidades);
+    }
+    $modalidad = json_decode(get_post_meta($id,'curza_plugin_academico_plan_modalidad',true),true);
+    $mods_array = json_decode($modalidades);
+    
     print "<div id='curza_plugin_academico_plan_modalidad_container'>";
-    print "<input type='text' name='curza_plugin_academico_plan_modalidad_input' value='".$modalidad."'></div>";
+    if(is_array($mods_array))
+    foreach($mods_array as $mod){
+        print "<input type='checkbox' name='modalidad[".$mod."]' ";
+        if(isset($modalidad[$mod]) && $modalidad[$mod] == 1) {
+            print "value='1' checked ";
+        }
+        print "/> ".$mod."<br>";
+    }
+    print "</div>";
     print "<div style='clear:both;'></div>";
 }
 
