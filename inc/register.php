@@ -10,6 +10,24 @@ include_once 'types/departamento/assets.php';
 include_once 'types/departamento/save.php';
 
 /**
+ * Custom Type Area
+ */
+include_once 'types/area/register.php';
+include_once 'types/area/columns.php';
+include_once 'types/area/metaboxes.php';
+include_once 'types/area/assets.php';
+include_once 'types/area/save.php';
+
+/**
+ * Custom Type Orientacion
+ */
+include_once 'types/orientacion/register.php';
+include_once 'types/orientacion/columns.php';
+include_once 'types/orientacion/metaboxes.php';
+include_once 'types/orientacion/assets.php';
+include_once 'types/orientacion/save.php';
+
+/**
  * Custom Type Carrera
  */
 include_once 'types/carrera/register.php';

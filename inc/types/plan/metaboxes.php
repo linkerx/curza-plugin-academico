@@ -55,10 +55,14 @@ function curza_plugin_academico_plan_carga_semanal_meta_box(){
 function curza_plugin_academico_plan_modalidad_meta_box(){
     global $post;
     $id = $post->ID;
+    
+    delete_option('curza_plugin_academico_modalidades');
+    
     $modalidades = get_option('curza_plugin_academico_modalidades');
     
     if(!$modalidades){
         $modalidades = json_encode(array('presencial','semipresencial','virtual'));
+        $modalidades_icons = json_encode(array('presencial' => 'ion-easel','semipresencial' => 'ion-laptop','virtual' => 'ion-earth'));
         update_option('curza_plugin_academico_modalidades',$modalidades);
     }
     $modalidad = json_decode(get_post_meta($id,'curza_plugin_academico_plan_modalidad',true),true);
